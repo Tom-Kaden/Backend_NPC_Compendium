@@ -20,10 +20,10 @@ public class Npc implements Validator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String shopLocation;
     private String belonging;
     private String race;
     private String description;
+    private String shopLocation;
     private Boolean shopKeeper;
     private Boolean alive;
 //    private Blob picture;
