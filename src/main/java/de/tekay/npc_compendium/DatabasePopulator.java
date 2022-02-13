@@ -19,12 +19,12 @@ public class DatabasePopulator implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         Npc npcOne = new Npc();
         npcOne.setAlive(true);
         npcOne.setBelonging("Weststern");
         npcOne.setDescription("Logenleitung - Purpurloge");
-        npcOne.setName("Captain Merial Adora Winfrey");
+        npcOne.setName("Captain Meriel Adora Winfrey");
         npcOne.setRace("Halbelf");
         npcOne.setShopKeeper(false);
         npcOne.setShopLocation("-");
@@ -33,7 +33,7 @@ public class DatabasePopulator implements CommandLineRunner {
         npcTwo.setAlive(true);
         npcTwo.setBelonging("Weststern");
         npcTwo.setDescription("Logenleitung - Purpurloge");
-        npcTwo.setName("Captain Merial Adora Winfrey");
+        npcTwo.setName("Captain Meriel Adora Winfrey");
         npcTwo.setRace("Halbelf");
         npcTwo.setShopKeeper(false);
         npcTwo.setShopLocation("-");
@@ -42,7 +42,7 @@ public class DatabasePopulator implements CommandLineRunner {
         npcThree.setAlive(true);
         npcThree.setBelonging("Weststern");
         npcThree.setDescription("Logenleitung - Purpurloge");
-        npcThree.setName("Captain Merial Adora Winfrey");
+        npcThree.setName("Captain Meriel Adora Winfrey");
         npcThree.setRace("Halbelf");
         npcThree.setShopKeeper(false);
         npcThree.setShopLocation("-");
