@@ -21,31 +21,34 @@ public class DatabasePopulator implements CommandLineRunner {
     @Override
     public void run(String... args) {
         Npc npcOne = new Npc();
-        npcOne.setAlive(true);
-        npcOne.setBelonging("Weststern");
-        npcOne.setDescription("Logenleitung - Purpurloge");
         npcOne.setName("Captain Meriel Adora Winfrey");
         npcOne.setRace("Halbelf");
+        npcOne.setBelonging("Weststern");
+        npcOne.setDescription("Logenleitung der Purpurloge - " +
+                "Ehemaliges Mitglied der Alten Garde");
         npcOne.setShopKeeper(false);
         npcOne.setShopLocation("-");
+        npcOne.setAlive(true);
 
         Npc npcTwo = new Npc();
+        npcTwo.setName("Jedermann");
+        npcTwo.setRace("Unbekannt");
+        npcTwo.setBelonging("Unbekannt");
+        npcTwo.setDescription("Ladenbesitzer in anderer Plane. " +
+                "Hilft dem Weststern scheinbar seit einiger Zeit");
+        npcTwo.setShopKeeper(true);
+        npcTwo.setShopLocation("Unbekannt");
         npcTwo.setAlive(true);
-        npcTwo.setBelonging("Weststern");
-        npcTwo.setDescription("Logenleitung - Purpurloge");
-        npcTwo.setName("Captain Meriel Adora Winfrey");
-        npcTwo.setRace("Halbelf");
-        npcTwo.setShopKeeper(false);
-        npcTwo.setShopLocation("-");
 
         Npc npcThree = new Npc();
-        npcThree.setAlive(true);
-        npcThree.setBelonging("Weststern");
-        npcThree.setDescription("Logenleitung - Purpurloge");
-        npcThree.setName("Captain Meriel Adora Winfrey");
-        npcThree.setRace("Halbelf");
+        npcThree.setName("Brock Sougough");
+        npcThree.setRace("Halbork");
+        npcThree.setBelonging("Weststern & Min'Aran");
+        npcThree.setDescription("Tavernenbesitzer Zum Adler in Min'Aran - " +
+                "Ehemaliges Mitglied der Alten Garde");
         npcThree.setShopKeeper(false);
         npcThree.setShopLocation("-");
+        npcThree.setAlive(true);
 
         List<Npc> npcList = new ArrayList<>();
         npcList.add(npcOne);
