@@ -1,15 +1,36 @@
 package de.tekay.npc_compendium.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+import javax.persistence.Column;
+import java.util.Arrays;
+
+@Getter
+@Setter
 public class CreateNpcDto {
 
+    @Column(length = 10000000)
+    private byte[] image;
     private String name;
-    private String belonging;
     private String race;
+    private String belonging;
     private String description;
-    private String shopLocation;
     private Boolean shopKeeper;
+    private String shopLocation;
     private Boolean alive;
+
+    @Override
+    public String toString() {
+        return "CreateNpcDto{" +
+                "image=" + Arrays.toString(image) +
+                ", name='" + name + '\'' +
+                ", race='" + race + '\'' +
+                ", belonging='" + belonging + '\'' +
+                ", description='" + description + '\'' +
+                ", shopKeeper=" + shopKeeper +
+                ", shopLocation='" + shopLocation + '\'' +
+                ", alive=" + alive +
+                '}';
+    }
 }

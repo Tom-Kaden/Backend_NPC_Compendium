@@ -10,8 +10,8 @@ import java.util.List;
 @Service
 public interface NpcServiceInterface {
 
-    Npc create(CreateNpcDto npc);
-    Npc update(UpdateNpcDto npc);
+    Npc create(CreateNpcDto npcDto);
+    Npc update(UpdateNpcDto npcDto);
     void deleteNpc(Long id);
     Npc readNpc(Long id);
     List<Npc> allNpcs();

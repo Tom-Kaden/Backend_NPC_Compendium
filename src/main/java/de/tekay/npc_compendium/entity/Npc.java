@@ -1,32 +1,35 @@
 package de.tekay.npc_compendium.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Arrays;
 
 @Getter
 @Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Npc implements Validator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(length = 10000000)
+    private byte[] picture;
     private String name;
-    private String belonging;
     private String race;
+    private String belonging;
     private String description;
-    private String shopLocation;
     private Boolean shopKeeper;
+    private String shopLocation;
     private Boolean alive;
-//    private Blob picture;
 
 
     @Override
@@ -39,4 +42,18 @@ public class Npc implements Validator {
         ValidationUtils.rejectIfEmpty(errors, "name", "target.required");
     }
 
+    @Override
+    public String toString() {
+        return "Npc{" +
+                "id=" + id +
+                ", picture=" + Arrays.toString(picture) +
+                ", name='" + name + '\'' +
+                ", race='" + race + '\'' +
+                ", belonging='" + belonging + '\'' +
+                ", description='" + description + '\'' +
+                ", shopKeeper=" + shopKeeper +
+                ", shopLocation='" + shopLocation + '\'' +
+                ", alive=" + alive +
+                '}';
+    }
 }

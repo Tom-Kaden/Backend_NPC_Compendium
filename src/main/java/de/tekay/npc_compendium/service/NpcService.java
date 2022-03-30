@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -19,18 +20,19 @@ public class NpcService implements NpcServiceInterface {
     @Autowired
     private ModelMapper modelMapper;
 
-
     @Override
     public Npc create(CreateNpcDto npc) {
+        System.out.println("NPC Image in NPCService: " + Arrays.toString(npc.getImage()));
+        System.out.println("NPC Image in ModelMapper: " + modelMapper.map(npc, Npc.class).toString());
         return npcRepository.save(modelMapper.map(npc, Npc.class));
     }
 
     @Override
-    public Npc update(UpdateNpcDto npc) {
-        Npc old = npcRepository.findById(npc.getId()).orElseThrow(
+    public Npc update(UpdateNpcDto npcDto) {
+        Npc old = npcRepository.findById(npcDto.getId()).orElseThrow(
                 () -> new EntityNotFoundException("ID NOT FOUND!")
         );
-        modelMapper.map(npc, old);
+        modelMapper.map(npcDto, old);
         return npcRepository.save(old);
     }
 
