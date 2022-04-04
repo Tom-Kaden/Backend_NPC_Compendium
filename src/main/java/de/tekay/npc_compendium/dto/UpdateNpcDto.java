@@ -14,7 +14,7 @@ public class UpdateNpcDto extends Npc {
 
     private Long id;
     @Column(length = 10000000)
-    private byte[] picture;
+    private String image;
     private String name;
     private String race;
     private String belonging;

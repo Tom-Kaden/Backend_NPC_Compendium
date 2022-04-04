@@ -22,7 +22,7 @@ public class Npc implements Validator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 10000000)
-    private byte[] picture;
+    private String image;
     private String name;
     private String race;
     private String belonging;
@@ -46,7 +46,7 @@ public class Npc implements Validator {
     public String toString() {
         return "Npc{" +
                 "id=" + id +
-                ", picture=" + Arrays.toString(picture) +
+                ", picture=" + image +
                 ", name='" + name + '\'' +
                 ", race='" + race + '\'' +
                 ", belonging='" + belonging + '\'' +

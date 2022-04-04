@@ -22,7 +22,7 @@ public class NpcService implements NpcServiceInterface {
 
     @Override
     public Npc create(CreateNpcDto npc) {
-        System.out.println("NPC Image in NPCService: " + Arrays.toString(npc.getImage()));
+        System.out.println("NPC Image in NPCService: " + npc.getImage());
         System.out.println("NPC Image in ModelMapper: " + modelMapper.map(npc, Npc.class).toString());
         return npcRepository.save(modelMapper.map(npc, Npc.class));
     }

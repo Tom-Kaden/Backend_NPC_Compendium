@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class CreateNpcDto {
 
     @Column(length = 10000000)
-    private byte[] image;
+    private String image;
     private String name;
     private String race;
     private String belonging;
@@ -23,7 +23,7 @@ public class CreateNpcDto {
     @Override
     public String toString() {
         return "CreateNpcDto{" +
-                "image=" + Arrays.toString(image) +
+                "image=" + image +
                 ", name='" + name + '\'' +
                 ", race='" + race + '\'' +
                 ", belonging='" + belonging + '\'' +
